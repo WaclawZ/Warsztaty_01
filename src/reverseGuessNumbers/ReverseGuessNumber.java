@@ -1,4 +1,4 @@
-package weekOne;
+package reverseGuessNumbers;
 
 import java.util.Scanner;
 
@@ -9,17 +9,17 @@ public class ReverseGuessNumber {
 		String inputText = "";
 
 		System.out.println("Pomysl liczbe od 0 do 1000, a ja zgadne w max. 10 probach");
-		int mini = 0, maxi = 1000, iterator = 1;
+		int mini = 0, maxi = 1001, iterator = 1;
 
 		do {
 			int guess = (maxi - mini) / 2 + mini;
-			
-			if(iterator>10){
+
+			if (iterator > 10) {
 				System.out.println("OSZUKUJESZ!!!\nNie bede dalej grac :(");
 				System.exit(0);
 			}
 
-			System.out.println("Zgaduje "+iterator+" raz : " + guess);
+			System.out.println("Zgaduje " + iterator + " raz : " + guess);
 
 			while (true) {
 				inputText = sc.next();

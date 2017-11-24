@@ -1,4 +1,4 @@
-package weekOne;
+package lottos;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package weekOne;
+package guessNumbers;
 
 import java.util.InputMismatchException;
 import java.util.Random;
