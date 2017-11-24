@@ -117,12 +117,12 @@ public class PopularWords {
 			e.printStackTrace();
 		}
 
-		StringTokenizer strTok = new StringTokenizer(str,"\n ");
-		
-		while(strTok.hasMoreTokens()){
+		StringTokenizer strTok = new StringTokenizer(str, "\n ");
+
+		while (strTok.hasMoreTokens()) {
 			String element = strTok.nextToken();
-			if(map.containsKey(element))
-				map.put(element, map.get(element)+1);
+			if (map.containsKey(element))
+				map.put(element, map.get(element) + 1);
 			else
 				map.put(element, 1);
 		}
@@ -131,28 +131,26 @@ public class PopularWords {
 
 		Iterator<Map.Entry<String, Integer>> it = sortedMap.entrySet().iterator();
 		ArrayList<String> save = new ArrayList<>();
-		
+
 		for (int i = 0; i < 10; i++) {
 			Map.Entry<String, Integer> res = it.next();
 			save.add(res.getKey());
 		}
-		
-		try{
-			if(!Files.exists(p1)){
+
+		try {
+			if (!Files.exists(p1)) {
 				Files.createFile(p1);
 				System.out.println("Plik zostal utworzony");
 			}
 			Files.write(p1, save);
 			System.out.println("Plik zostal zapisany");
-		}catch(IOException e){
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 	}
 
 	public static void main(String[] args) {
-		// String[] bannedWords = {"i", "lub", "ale", "że", "też", "na", "dla",
-		// "od", "z", "się", "w", "o"};
 		String fileName = "popular_words.txt", fileName2 = "most_popular_words.txt";
 
 		downloadTitles(fileName);
