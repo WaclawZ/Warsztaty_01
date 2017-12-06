@@ -43,14 +43,15 @@ public class Cube {
 
 		for (int i = 0; i < number; i++) {
 			score += r.nextInt(dice) + 1;
-			if (s == '+')
-				score += mod;
-			else if (s == '-')
-				score -= mod;
+			
 			System.out.println("Rzut nr " + (i + 1) + " : " + score);
 			result += score;
 			score = 0;
 		}
+		if (s == '+')
+			result += mod;
+		else if (s == '-')
+			result -= mod;
 
 		System.out.println("Wynik symulacji : " + result);
 	}
